@@ -24,8 +24,29 @@ def findMin(nums):
     print(nums[mid])
     return nums[mid]
 
+def findMin1(nums):
+    if nums is None:return
+    if len(nums)==1:return nums[0]
+    right=len(nums)-1
+    left=0
+    while left <right:
+        mid = int((left+right)/2)
+        if nums[mid] < nums[right]:
+            right = mid
+        else:
+            left = mid+1
+    print(nums[left])
+
+
+
 findMin([1,2,3,4,5])
 findMin([2,3,4,5,1])
 findMin([4,5,1,2,3])
 findMin([4,5,6,0,1,2,3])
 findMin([4,5,7,1,2,3])
+
+findMin1([1,2,3,4,5])
+findMin1([2,3,4,5,1])
+findMin1([4,5,1,2,3])
+findMin1([4,5,6,0,1,2,3])
+findMin1([4,5,7,1,2,3])
